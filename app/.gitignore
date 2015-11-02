@@ -1,5 +1,6 @@
 /build
 .idea/
+.idea/misc.xml
 local.properties
 .gradle
 

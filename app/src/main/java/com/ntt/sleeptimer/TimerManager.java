@@ -125,8 +125,10 @@ public class TimerManager {
         if (minutes < 0) {
             throw new IllegalArgumentException("Argument minutes cannot be negative");
         }
-
+        int hours = minutes / 60;
+        minutes = minutes % 60;
         Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.HOUR, hours);
         calendar.add(Calendar.MINUTE, minutes);
 
         // NOTE: If an alarm has already been set in this context, this intent will automatically replace it
