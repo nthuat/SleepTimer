@@ -1,0 +1,28 @@
+<!--
+Copyright (c) 2013 Joel Andrews
+Distributed under the MIT License: http://opensource.org/licenses/MIT
+-->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical|center_horizontal"
+    tools:context=".CountdownActivity">
+
+    <TableRow>
+        <TextView
+            android:id="@+id/time_remaining_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/countdown_timer_text_size" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/cancel_timer_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="stopCountdown"
+            android:text="@string/cancel_timer_button_label" />
+    </TableRow>
+
+</TableLayout>

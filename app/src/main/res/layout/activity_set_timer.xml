@@ -1,0 +1,53 @@
+<!--
+Copyright (c) 2013 Joel Andrews
+Distributed under the MIT License: http://opensource.org/licenses/MIT
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    tools:context=".SetTimerActivity">
+    <FrameLayout
+        android:id="@+id/seekBarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+        <com.ntt.sleeptimer.SeekArc
+            android:id="@+id/seekArc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="30dp"
+            seekarc:arcColor="@color/dark_red"
+            seekarc:clockwise="true"
+            seekarc:max="60"
+            seekarc:progressColor="@color/red"
+            seekarc:rotation="0"
+            seekarc:progress="0"
+            seekarc:startAngle="0"
+            seekarc:sweepAngle="360"
+            seekarc:thumb="@drawable/custom_seek_arc_control_selector"
+            seekarc:touchInside="true" />
+
+        <TextView
+            android:id="@+id/seekArcProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="0"
+            android:textSize="40sp" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/start_timer_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="startTimer"
+        android:text="@string/start_timer_button_label">
+    </Button>
+
+</LinearLayout>
