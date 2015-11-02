@@ -33,26 +33,13 @@ public class CountdownActivity extends Activity {
 
     @Override
     protected final void onCreate(Bundle savedInstanceState) {
-        onCreate(savedInstanceState, TimerManager.get(this), CountdownNotifier.get(this));
-    }
-
-    /**
-     * Initializes the activity's dependencies.
-     *
-     * @param savedInstanceState The activity's previous state
-     * @param timerManager The timer manager to use
-     * @param countdownNotifier The countdown notifier to use
-     */
-    protected void onCreate(Bundle savedInstanceState, TimerManager timerManager, CountdownNotifier countdownNotifier) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_countdown);
 
         this.timeRemainingView = (TextView) findViewById(R.id.time_remaining_view);
 
-        this.timerManager = timerManager;
-        this.countdownNotifier = countdownNotifier;
+        this.timerManager = TimerManager.get(this);
+        this.countdownNotifier = CountdownNotifier.get(this);
     }
 
     @Override
@@ -122,6 +109,11 @@ public class CountdownActivity extends Activity {
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 
     /**
      * A countdown timer that updates the time remaining text view every 1 second.
